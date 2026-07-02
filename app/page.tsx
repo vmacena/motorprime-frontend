@@ -166,7 +166,7 @@ export default function Home() {
                   <h4 className="font-body-md text-body-md text-white font-bold">Horário de Funcionamento</h4>
                   <p className="font-body-md text-body-md text-secondary">
                     Seg - Sex: 08:00 - 18:00<br />
-                    Sáb: 08:00 - 13:00
+                    Sáb: 08:00 - 12:00
                   </p>
                 </div>
               </div>
@@ -212,19 +212,9 @@ export default function Home() {
             <span className="font-headline-md text-headline-md text-primary">Motor Prime</span>
           </div>
           <div className="font-label-sm text-label-sm text-secondary-fixed-dim text-center md:text-left">
-            © 2024 Motor Prime - Seu padrão prime. Todos os direitos reservados.
+            © 2026 Motor Prime - Seu padrão prime. Todos os direitos reservados.
           </div>
-          <div className="flex gap-6">
-            <a className="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-on-surface transition-colors" href="#">
-              Termos de Uso
-            </a>
-            <a className="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-on-surface transition-colors" href="#">
-              Privacidade
-            </a>
-            <a className="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-on-surface transition-colors" href="#">
-              Trabalhe Conosco
-            </a>
-          </div>
+
         </div>
       </footer>
     </>
