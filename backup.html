@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Motor Prime - Seu padrão prime</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400..900&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-container": "#fffbfb",
+                        "surface-container": "#1e2020",
+                        "surface-dim": "#121414",
+                        "secondary-fixed-dim": "#c3c7c9",
+                        "background": "#121414",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-bright": "#38393a",
+                        "on-surface": "#e2e2e2",
+                        "on-primary": "#690003",
+                        "on-tertiary": "#313030",
+                        "surface": "#121414",
+                        "outline-variant": "#5e3f3b",
+                        "secondary-container": "#484c4e",
+                        "on-secondary-fixed": "#181c1e",
+                        "tertiary": "#c8c6c5",
+                        "surface-container-highest": "#333535",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-surface-variant": "#e8bcb6",
+                        "inverse-primary": "#c0000b",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#410001",
+                        "primary-fixed": "#ffdad5",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "on-secondary-container": "#b8bcbe",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#333535",
+                        "primary-container": "#e61919",
+                        "on-primary-fixed-variant": "#930006",
+                        "on-secondary-fixed-variant": "#434749",
+                        "surface-container-lowest": "#0c0f0f",
+                        "primary": "#ffb4aa",
+                        "tertiary-fixed": "#e5e2e1",
+                        "secondary": "#c3c7c9",
+                        "outline": "#ae8782",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#2f3131",
+                        "on-background": "#e2e2e2",
+                        "tertiary-container": "#757474",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary": "#2d3133",
+                        "surface-container-high": "#282a2b",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-tint": "#ffb4aa",
+                        "secondary-fixed": "#dfe3e5",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "unit": "4px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["Chivo"],
+                        "headline-lg-mobile": ["Chivo"],
+                        "headline-lg": ["Chivo"],
+                        "headline-md": ["Chivo"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .bg-carbon-fiber {
+            background-color: #1a1c1c;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.02) 10px, rgba(255, 255, 255, 0.02) 20px);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(230, 25, 25, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-secondary/20">
+<div class="flex justify-between items-center max-w-container mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<div class="flex items-center gap-4">
+<img alt="Motor Prime Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGH_yDh9MHP787jpIal-OjPg6gS4s3_CrCm7bij1JLSjjGwz7M6XUVOVtkGAfuBlQuafbbH6v1wTwpt8tFFriWgC_HpZK7vZ0ALMk44xjbW7GDPO_NztF7JtZNm2S5ZvsRsdw9HvceJqWYZmsi1o4N1gwNrq6le_H5xbplIBNvSeKj26paqeNQPAyZsEX94yGkj8RVILgFTkenoJuqIvggtpZH0RgwDq1pXd15P6X3cakscBpPu8Vn_nH2ZRnwUdnr5iSWggk-0bI"/>
+<span class="font-display-lg text-display-lg text-primary uppercase tracking-tighter hidden md:block">Motor Prime</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="#servicos">Serviços</a>
+<a class="text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="#agendamento">Agendamento</a>
+<a class="text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="#sobre">Sobre</a>
+<a class="text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="#localizacao">Localização</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block bg-transparent border-2 border-secondary text-secondary hover:border-primary hover:text-primary px-6 py-2 rounded font-body-md text-body-md transition-all duration-300">Login</button>
+<button class="bg-primary-container text-white px-6 py-2 rounded font-body-md text-body-md shadow-[inset_0_1px_rgba(255,255,255,0.2)] hover:brightness-110 active:scale-95 transition-all duration-300 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">phone</span>
+                    Contato
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center pt-20" data-alt="A cinematic, high-contrast shot of a sleek, high-performance sports car engine bay in a dimly lit, luxury garage. The scene is illuminated by dramatic, cold white overhead lights and deep red neon underglow accents, reflecting off polished chrome and carbon fiber surfaces. The aesthetic is ultra-modern, aggressive, and highly detailed, conveying a sense of precision engineering and raw power. High-end automotive photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJR7I6Eo12DfmOmR8KQKx-JwhFJidLWfl-c_rjlCNBuU-7PWQ4-732ZMVYRTflQuMA-aMb6AUQYG-LhMos5KtfRg0FnsgVHldNB8Ilirf00Dg1taJp8Odw7Z6epZunrbB3IBIuDkz5vb5P5bqs2pOUUig8tSv7L_OhNUnZjwmMfOQs94fabc-XfgMTBvwef-myfoO6ilKtgUyartulT-OH64kGOnYyvhw7wVb4t2W_VpbPlIg3szN--fxsSQaGXw5lVjLpXSTolts')">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+<div class="relative z-10 max-w-container mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-8 flex flex-col items-start justify-center gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container border border-secondary/20">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Alta Performance</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-[72px] md:leading-[80px] text-white tracking-tighter">
+                    O Seu Padrão <span class="text-primary-container text-glow">Prime</span> de Manutenção.
+                </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                    Especialistas em mecânica de precisão, tuning e estética automotiva para veículos de alta performance. Agende seu serviço com quem entende a alma da sua máquina.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
+<a class="bg-primary-container text-white px-8 py-4 rounded text-center font-body-md text-body-md shadow-[inset_0_1px_rgba(255,255,255,0.2)] hover:brightness-110 active:scale-95 transition-all duration-300" href="#agendamento">
+                        Agendar Agora
+                    </a>
+<a class="bg-transparent border border-secondary text-on-surface px-8 py-4 rounded text-center font-body-md text-body-md hover:bg-surface-container transition-all duration-300" href="#servicos">
+                        Conhecer Serviços
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24 bg-surface-container-lowest" id="servicos">
+<div class="max-w-container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-white mb-2">Nossos Serviços</h2>
+<p class="font-body-md text-body-md text-secondary">Precisão cirúrgica para cada componente do seu veículo.</p>
+</div>
+<a class="text-primary-container hover:text-primary transition-colors flex items-center gap-2 font-body-md text-body-md" href="#">
+                    Ver todos
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Service Card 1 -->
+<div class="bg-surface-container border border-secondary/10 rounded-lg p-6 hover:border-primary-container/50 transition-all duration-300 group relative overflow-hidden flex flex-col h-full bg-carbon-fiber">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center mb-6 text-primary-container">
+<span class="material-symbols-outlined text-3xl">oil_barrel</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-3">Troca de Óleo</h3>
+<p class="font-body-md text-body-md text-secondary mb-6 flex-grow">Lubrificantes de alta performance para garantir a longevidade e proteção máxima do motor.</p>
+<div class="flex justify-between items-center mt-auto border-t border-secondary/10 pt-4">
+<span class="font-label-sm text-label-sm text-secondary">A partir de R$ 250</span>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary-container transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface-container border border-secondary/10 rounded-lg p-6 hover:border-primary-container/50 transition-all duration-300 group relative overflow-hidden flex flex-col h-full bg-carbon-fiber">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center mb-6 text-primary-container">
+<span class="material-symbols-outlined text-3xl">speed</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-3">Freios</h3>
+<p class="font-body-md text-body-md text-secondary mb-6 flex-grow">Manutenção e upgrade de sistemas de frenagem, discos ventilados e pastilhas cerâmicas.</p>
+<div class="flex justify-between items-center mt-auto border-t border-secondary/10 pt-4">
+<span class="font-label-sm text-label-sm text-secondary">Diagnóstico Grátis</span>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary-container transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface-container border border-secondary/10 rounded-lg p-6 hover:border-primary-container/50 transition-all duration-300 group relative overflow-hidden flex flex-col h-full bg-carbon-fiber">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center mb-6 text-primary-container">
+<span class="material-symbols-outlined text-3xl">car_repair</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-3">Suspensão</h3>
+<p class="font-body-md text-body-md text-secondary mb-6 flex-grow">Ajuste fino, geometria 3D e instalação de suspensões esportivas para máxima aderência.</p>
+<div class="flex justify-between items-center mt-auto border-t border-secondary/10 pt-4">
+<span class="font-label-sm text-label-sm text-secondary">A partir de R$ 400</span>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary-container transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Service Card 4 -->
+<div class="bg-surface-container border border-secondary/10 rounded-lg p-6 hover:border-primary-container/50 transition-all duration-300 group relative overflow-hidden flex flex-col h-full bg-carbon-fiber">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center mb-6 text-primary-container">
+<span class="material-symbols-outlined text-3xl">settings_input_component</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-3">Injeção Eletrônica</h3>
+<p class="font-body-md text-body-md text-secondary mb-6 flex-grow">Mapeamento, diagnóstico computadorizado e otimização da ECU para ganho de potência.</p>
+<div class="flex justify-between items-center mt-auto border-t border-secondary/10 pt-4">
+<span class="font-label-sm text-label-sm text-secondary">A partir de R$ 350</span>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary-container transition-colors">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Appointment Section -->
+<section class="py-24 relative overflow-hidden" id="agendamento">
+<!-- Background Pattern -->
+<div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #333535 25%, transparent 25%, transparent 75%, #333535 75%, #333535), repeating-linear-gradient(45deg, #333535 25%, #121414 25%, #121414 75%, #333535 75%, #333535); background-position: 0 0, 20px 20px; background-size: 40px 40px;"></div>
+<div class="max-w-container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="col-span-1 md:col-span-5 mb-12 md:mb-0">
+<h2 class="font-display-lg text-display-lg text-white mb-6">Agendamento</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-8">
+                    Não deixe a performance do seu carro para depois. Reserve seu horário na nossa oficina prime de forma rápida e segura.
+                </p>
+<div class="flex flex-col gap-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary border border-secondary/20 shrink-0">
+<span class="material-symbols-outlined text-xl">location_on</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-md text-white font-bold">Localização</h4>
+<p class="font-body-md text-body-md text-secondary">Av. Ayrton Senna, 3000 - Barra da Tijuca</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary border border-secondary/20 shrink-0">
+<span class="material-symbols-outlined text-xl">schedule</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-md text-white font-bold">Horário de Funcionamento</h4>
+<p class="font-body-md text-body-md text-secondary">Seg - Sex: 08:00 - 18:00<br/>Sáb: 08:00 - 13:00</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-1 md:col-span-6 md:col-start-7">
+<div class="bg-surface-container border border-secondary/20 rounded-xl p-8 shadow-2xl relative bg-carbon-fiber">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-container via-primary to-primary-container"></div>
+<form class="space-y-6">
+<div>
+<label class="block font-label-sm text-label-sm text-secondary mb-2 uppercase" for="name">Nome Completo</label>
+<input class="w-full bg-surface-dim border-b border-secondary/30 border-t-0 border-x-0 rounded-t focus:border-primary-container focus:ring-0 text-white font-body-md text-body-md py-3 px-4 transition-colors" id="name" placeholder="Seu nome" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-sm text-label-sm text-secondary mb-2 uppercase" for="car">Modelo do Veículo</label>
+<input class="w-full bg-surface-dim border-b border-secondary/30 border-t-0 border-x-0 rounded-t focus:border-primary-container focus:ring-0 text-white font-body-md text-body-md py-3 px-4 transition-colors" id="car" placeholder="Ex: Porsche 911" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-secondary mb-2 uppercase" for="date">Data Preferencial</label>
+<input class="w-full bg-surface-dim border-b border-secondary/30 border-t-0 border-x-0 rounded-t focus:border-primary-container focus:ring-0 text-white font-body-md text-body-md py-3 px-4 transition-colors [color-scheme:dark]" id="date" type="date"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-secondary mb-2 uppercase" for="service">Serviço Necessário</label>
+<select class="w-full bg-surface-dim border-b border-secondary/30 border-t-0 border-x-0 rounded-t focus:border-primary-container focus:ring-0 text-white font-body-md text-body-md py-3 px-4 transition-colors appearance-none" id="service">
+<option disabled="" selected="" value="">Selecione um serviço...</option>
+<option value="oleo">Troca de Óleo</option>
+<option value="freios">Revisão de Freios</option>
+<option value="suspensao">Suspensão</option>
+<option value="injecao">Injeção Eletrônica</option>
+<option value="outro">Outro</option>
+</select>
+</div>
+<button class="w-full bg-primary-container text-white py-4 rounded font-body-md text-body-md font-bold shadow-[inset_0_1px_rgba(255,255,255,0.2)] hover:brightness-110 active:scale-95 transition-all duration-300 mt-4 flex justify-center items-center gap-2" type="submit">
+                            Confirmar Agendamento
+                            <span class="material-symbols-outlined">event_available</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- WhatsApp Floating Button -->
+<a class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 group" href="#">
+<!-- SVG for WhatsApp Icon as Material Icons doesn't have the official brand logo -->
+<svg fill="currentColor" height="28" viewbox="0 0 16 16" width="28" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+</svg>
+<span class="absolute right-full mr-4 bg-surface-container-highest text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">Fale Conosco</span>
+</a>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-secondary/10 w-full py-12">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container mx-auto px-margin-mobile md:px-margin-desktop gap-6">
+<div class="flex items-center gap-4">
+<img alt="Motor Prime Logo" class="h-8 w-auto object-contain opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGH_yDh9MHP787jpIal-OjPg6gS4s3_CrCm7bij1JLSjjGwz7M6XUVOVtkGAfuBlQuafbbH6v1wTwpt8tFFriWgC_HpZK7vZ0ALMk44xjbW7GDPO_NztF7JtZNm2S5ZvsRsdw9HvceJqWYZmsi1o4N1gwNrq6le_H5xbplIBNvSeKj26paqeNQPAyZsEX94yGkj8RVILgFTkenoJuqIvggtpZH0RgwDq1pXd15P6X3cakscBpPu8Vn_nH2ZRnwUdnr5iSWggk-0bI"/>
+<span class="font-headline-md text-headline-md text-primary">Motor Prime</span>
+</div>
+<div class="font-label-sm text-label-sm text-secondary-fixed-dim text-center md:text-left">
+                © 2024 Motor Prime - Seu padrão prime. Todos os direitos reservados.
+            </div>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-on-surface transition-colors" href="#">Termos de Uso</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-on-surface transition-colors" href="#">Privacidade</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-on-surface transition-colors" href="#">Trabalhe Conosco</a>
+</div>
+</div>
+</footer>
+</body></html>
