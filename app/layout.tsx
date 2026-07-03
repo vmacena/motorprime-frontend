@@ -1,20 +1,11 @@
 import type { Metadata } from "next";
-import { Chivo, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const chivo = Chivo({
-  variable: "--font-chivo",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const hanken = Hanken_Grotesk({
-  variable: "--font-hanken",
-  subsets: ["latin"],
-});
-
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -97,7 +88,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`dark ${chivo.variable} ${hanken.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`dark ${inter.variable} h-full antialiased`}
     >
       <head>
         <link

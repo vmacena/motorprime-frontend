@@ -51,7 +51,7 @@ export default function Home() {
         <div className="relative z-10 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter">
           <div className="col-span-1 md:col-span-8 flex flex-col items-start justify-center gap-6">
             <h1 className="font-display-lg text-display-lg md:text-[72px] md:leading-[80px] text-white tracking-tighter">
-              Oficina mecânica em São Carlos com padrão <span className="text-primary-container text-glow">prime</span>.
+              Seu carro merece padrão <span className="text-primary-container text-glow">prime</span>. Em São Carlos.
             </h1>
             <p className="font-body-lg text-body-lg text-secondary max-w-2xl">
               Especialistas em conserto de veículos, diagnóstico e reparo automotivo. Agende seu serviço com os melhores mecânicos de São Carlos.
