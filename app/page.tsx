@@ -51,10 +51,10 @@ export default function Home() {
         <div className="relative z-10 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter">
           <div className="col-span-1 md:col-span-8 flex flex-col items-start justify-center gap-6">
             <h1 className="font-display-lg text-display-lg md:text-[72px] md:leading-[80px] text-white tracking-tighter">
-              Seu carro merece padrão <span className="text-primary-container text-glow">prime</span>.
+              Oficina mecânica em São Carlos com padrão <span className="text-primary-container text-glow">prime</span>.
             </h1>
             <p className="font-body-lg text-body-lg text-secondary max-w-2xl">
-              Especialistas em diagnóstico e reparo automotivo. Agende seu serviço com quem entende do seu carro.
+              Especialistas em conserto de veículos, diagnóstico e reparo automotivo. Agende seu serviço com os melhores mecânicos de São Carlos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
               <a
@@ -63,6 +63,35 @@ export default function Home() {
               >
                 Conhecer Serviços
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-24 bg-background" id="sobre">
+        <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-headline-lg text-headline-lg text-white mb-6">Sobre a Motor Prime</h2>
+              <div className="space-y-4 font-body-md text-body-md text-secondary">
+                <p>
+                  A Motor Prime é a sua <strong>oficina mecânica em São Carlos</strong> especializada em entregar o mais alto padrão em manutenção automotiva. Com anos de experiência no mercado de <strong>conserto de veículos</strong>, nossa missão é garantir que seu carro receba um tratamento de excelência, seja em revisões preventivas ou reparos complexos.
+                </p>
+                <p>
+                  Nossos <strong>mecânicos</strong> são altamente treinados e utilizam equipamentos de diagnóstico de ponta para identificar e resolver problemas em sistemas de injeção eletrônica, suspensão, freios e motor. Sabemos o quanto você valoriza seu veículo, por isso trabalhamos com transparência, peças de qualidade e atendimento personalizado.
+                </p>
+                <p>
+                  Se você procura um lugar de confiança para cuidar do seu carro em <strong>São Carlos e região</strong>, a Motor Prime é a escolha certa. Traga seu veículo e experimente nosso padrão prime.
+                </p>
+              </div>
+            </div>
+            <div className="relative h-[400px] rounded-xl overflow-hidden border border-secondary/20 shadow-2xl">
+              <div className="absolute inset-0 bg-carbon-fiber flex items-center justify-center">
+                 <span className="material-symbols-outlined text-[100px] text-primary/20">
+                   car_repair
+                 </span>
+              </div>
             </div>
           </div>
         </div>
@@ -211,8 +240,14 @@ export default function Home() {
             />
             <span className="font-headline-md text-headline-md text-primary">Motor Prime</span>
           </div>
+          <div className="flex gap-4 items-center">
+            <a href="https://www.instagram.com/motorprime.oficina/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <span className="sr-only">Instagram</span>
+            </a>
+          </div>
           <div className="font-label-sm text-label-sm text-secondary-fixed-dim text-center md:text-left">
-            © 2026 Motor Prime - Seu padrão prime. Todos os direitos reservados.
+            © 2026 Motor Prime - Oficina Mecânica em São Carlos. Todos os direitos reservados.
           </div>
 
         </div>
