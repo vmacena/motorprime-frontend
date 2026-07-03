@@ -1,12 +1,29 @@
 import { MetadataRoute } from 'next';
+import { artigos } from './blog/artigos';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://motorprimeoficina.com.br';
+  
+  const blogUrls = artigos.map((artigo) => ({
+    url: `${baseUrl}/blog/${artigo.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   return [
     {
-      url: 'https://motorprimeoficina.com.br',
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    ...blogUrls,
   ];
 }

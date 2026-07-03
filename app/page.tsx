@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -26,6 +27,9 @@ export default function Home() {
             <a className="text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="#localizacao">
               Localização
             </a>
+            <Link className="text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="/blog">
+              Dicas
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <a 
@@ -34,9 +38,6 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
-                phone
-              </span>
               Contato
             </a>
           </div>
